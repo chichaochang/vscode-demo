@@ -4,6 +4,8 @@ from .models import Post
 
 # Create your views here.
 
+
+
 def homepage(request):
     posts = Post.objects.all()
     post_list = list()
