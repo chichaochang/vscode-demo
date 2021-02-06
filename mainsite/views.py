@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from datetime import datetime
 from .models import Post
@@ -14,3 +15,11 @@ def homepage(request):
     #    post_list.append("No.{}:".format(str(count)) + str(post)+"<hr>")
     #    post_list.append("<small>" + str(post.body) + "</small><br><br>")
     #return HttpResponse(post_list)
+
+def showpost(request, slug):
+    try:
+        post = Post.objects.get(slug=slug)
+        if post != None:
+            return render(request, 'post.html', locals())
+    except:
+        return redirect('/')
