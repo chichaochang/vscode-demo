@@ -9,11 +9,9 @@
     <body>
         <h1>{{ post.title }}>></h1>
         <hr>
-        {% for post in posts %}
             <p style='font-family:微軟正黑體;font-size:12pt;letter-spacing: 2px;'>
                 {{ post.body }}
             </p>
-        {% endfor %}
         <hr>
         <h3><a href='/'>回首頁</a></h3>
         <h3>現在時刻: {{ now }}</h3>
